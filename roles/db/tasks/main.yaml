@@ -3,7 +3,12 @@
     name: mysql-server
     state: latest
 
-- name: Start and Enable MySQL server
+- name: Start MySQL server
+  ansible.builtin.service:
+    name: mysqld
+    started: yes
+
+- name: Enable MySQL server
   ansible.builtin.service:
     name: mysqld
     enabled: yes
@@ -29,5 +34,5 @@
     msg: "output: {{mysql_connection_output}}"
 
 - name: setup root password
-  ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ PASSWORD }}"
+  ansible.builtin.command: "mysql_secure_installation --set-root-pass {{PASSWORD}}"
   when: mysql_connection_output.failed is true
