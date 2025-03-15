@@ -12,7 +12,6 @@
   - {name: 'nodejs', state: latest}
   - {name: 'mysql', state: latest}
 
-
 - name: create expense user
   ansible.builtin.user:
     name: expense
