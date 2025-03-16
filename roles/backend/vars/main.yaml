@@ -3,4 +3,4 @@ login_host: db.daws78s.xyz
 PASSWORD: ExpenseApp@1
 HOST_NAME: db.daws78s.xyz
 app_location: /app
-component: backend
+component: backend 
